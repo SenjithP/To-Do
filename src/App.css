@@ -1,38 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #1E1E1E; /* Dark background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  color: #FFFFFF; /* White text color */
+  margin-bottom: 0.5rem;
+  font-size: 1.75rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.TodoWrapper {
+  background: #2E2E2E; /* Slightly lighter dark background */
+  margin-top: 5rem;
+  padding: 2rem;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1); /* White drop shadow for depth */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.TodoForm {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.todo-input {
+  outline: none;
+  background: none;
+  border: 1px solid #FFFFFF; /* White border */
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  width: 300px;
+  color: #FFFFFF; /* White text color */
+}
+
+.todo-input::placeholder {
+  color: #A8A8A8; /* Light gray placeholder text color */
+}
+
+.todo-btn {
+  background: #db7a04; /* Blue button background */
+  color: #FFFFFF; /* White button text color */
+  border: none;
+  padding: 0.55rem;
+  cursor: pointer;
+}
+
+.Todo {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background: #2E2E2E; /* Slightly lighter dark background */
+  color: #FFFFFF; /* White text color */
+  padding: 0.75rem 1rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  box-shadow: 0px 2px 5px rgba(255, 255, 255, 0.1); /* White drop shadow for cards */
 }
 
-.App-link {
-  color: #61dafb;
+.fa-trash,
+.fa-pen-to-square {
+  margin-left: 0.75rem;
+  cursor: pointer;
+}
+.fa-check-double {
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.completed {
+  color: #A8A8A8; /* Light gray completed text color */
+  text-decoration: line-through;
 }
