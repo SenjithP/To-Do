@@ -59,11 +59,25 @@ export const TodoWrapper = () => {
         }
       })
     );
+    // Store the updated todos in localStorage
+    localStorage.setItem(
+      "todos",
+      JSON.stringify(
+        todos.map((todo) =>
+          todo.id === id ? { ...todo, completed: !todo.completed } : todo
+        )
+      )
+    );
   };
 
   // Function to Delete todos
   const deleteTodo = (id) => {
     setTodos(todos.filter((todo) => todo.id !== id));
+    // Store the updated todos in localStorage
+    localStorage.setItem(
+      "todos",
+      JSON.stringify(todos.filter((todo) => todo.id !== id))
+    );
     toast.success("Task Deleted Successfully!");
   };
 
@@ -81,6 +95,15 @@ export const TodoWrapper = () => {
     setTodos(
       todos.map((todo) =>
         todo.id === id ? { ...todo, task, isEditing: !todo.isEditing } : todo
+      )
+    );
+    // Store the updated todos in localStorage
+    localStorage.setItem(
+      "todos",
+      JSON.stringify(
+        todos.map((todo) =>
+          todo.id === id ? { ...todo, task, isEditing: !todo.isEditing } : todo
+        )
       )
     );
     toast.success("Task Updated Successfully!");
